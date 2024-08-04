@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Payload Customizer</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .highlight-xss {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        .highlight-trhacknon {
+            color: #00ffcc;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff4b3e;
+        }
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+        }
+        select:focus, input:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the <span class="highlight-xss">XSS</span> Payload Customizer by <span class="highlight-trhacknon">TRHACKNON</span>!</h1>
+        <p>This web app allows you to customize <span class="highlight-xss">XSS</span> payloads by inserting a message or name of your choice.</p>
+        <form action="/customize" method="POST" enctype="multipart/form-data">
+            <label for="message">Enter the name or message to display in the payloads:</label>
+            <input type="text" id="message" name="message" required>
+
+            <label for="file_type">Choose the file type to save the payloads:</label>
+            <select id="file_type" name="file_type" required>
+                <option value="txt">TXT</option>
+                <option value="json">JSON</option>
+            </select>
+
+            <label for="source">Do you have a payload list file?</label>
+            <select id="source" name="source" onchange="toggleSource()" required>
+                <option value="upload">Yes, I will upload a file</option>
+                <option value="download">No, I want to download a payload list</option>
+            </select>
+
+            <div id="upload_section">
+                <label for="payload_file">Upload your payload list file:</label>
+                <input type="file" id="payload_file" name="payload_file">
+            </div>
+
+            <div id="download_section" style="display: none;">
+                <label for="url">Choose one of the following payload lists to download:</label>
+                <select id="url" name="url">
+                    <option value="https://raw.githubusercontent.com/payloadbox/xss-payload-list/master/Intruder/xss-payload-list.txt">Payload Box</option>
+                    <option value="https://raw.githubusercontent.com/Proviesec/xss-payload-list/main/xss-all-list.txt">Proviesec</option>
+                    <option value="https://github.com/pgaijin66/XSS-Payloads/raw/master/payload/payload.txt">PGAijin66</option>
+                </select>
+            </div>
+
+            <button type="submit">Customize Payloads</button>
+        </form>
+    </div>
+    <script>
+        function toggleSource() {
+            var source = document.getElementById('source').value;
+            if (source === 'upload') {
+                document.getElementById('upload_section').style.display = 'block';
+                document.getElementById('download_section').style.display = 'none';
+            } else {
+                document.getElementById('upload_section').style.display = 'none';
+                document.getElementById('download_section').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
