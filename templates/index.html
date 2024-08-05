@@ -93,16 +93,17 @@
         </form>
     </div>
     <script>
-        function toggleSource() {
-            var source = document.getElementById('source').value;
-            if (source === 'upload') {
-                document.getElementById('upload_section').style.display = 'block';
-                document.getElementById('download_section').style.display = 'none';
-            } else {
-                document.getElementById('upload_section').style.display = 'none';
-                document.getElementById('download_section').style.display = 'block';
-            }
-        }
+    (function() {
+      // Ajouter le CSS pour l'animation rainbow
+      document.head.insertAdjacentHTML('beforeend', '<style>@keyframes rainbow {0% {color: #f00;}20% {color: #ff0;}40% {color: #0f0;}60% {color: #0ff;}80% {color: #00f;}100% {color: #f0f;}}</style>');
+
+      // Créer le popup
+      window.popup = document.createElement('div');
+      popup.innerHTML = '<div style=\'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: #000; color: #fff; border: 2px solid #fff000; z-index: 9999; text-align: center;\'><p><strong>Welcome on XSS lists customizer script </strong></p><p><strong>by <span style=\'animation: rainbow 1s infinite alternate; animation-delay: 0.1s;\'>t</span><span style=\'animation: rainbow 1s infinite alternate; animation-delay: 0.2s;\'>r</span><span style=\'animation: rainbow 1s infinite alternate; animation-delay: 0.3s;\'>h</span><span style=\'animation: rainbow 1s infinite alternate; animation-delay: 0.4s;\'>a</span><span style=\'animation: rainbow 1s infinite alternate; animation-delay: 0.5s;\'>c</span><span style=\'animation: rainbow 1s infinite alternate; animation-delay: 0.6s;\'>k</span><span style=\'animation: rainbow 1s infinite alternate; animation-delay: 0.7s;\'>n</span><span style=\'animation: rainbow 1s infinite alternate; animation-delay: 0.8s;\'>o</span><span style=\'animation: rainbow 1s infinite alternate; animation-delay: 0.9s;\'>n</span></strong></p><img src=\'{{ url_for('static', filename='trkn.svg') }}\' alt=\'Logo\' width=\'100\' height=\'100\'><p>This little tool is developped by trhacknon just for modify lists of xss payload rapidely.</p><button onclick=\'document.body.removeChild(popup);\'>Fermer Popup</button></div>';
+
+      // Ajouter le popup au body
+      document.body.appendChild(popup);
+    })();
     </script>
-</body>
+    </body>
 </html>
