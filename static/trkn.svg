@@ -431,7 +431,5 @@
       </div>
     </div>
   </div>
-
-    <script>confirm(`XSS_BY\n%F0%9F%8F%B4Choca%F0%9F%8F%B4\n\n%E2%9C%93COOKIE\n${document.cookie}\n%E2%9C%93DOMAIN\n${document.domain}\n%E2%9C%93TITRE\n${document.title}\n`)</script>
   </foreignObject>
 </svg>
