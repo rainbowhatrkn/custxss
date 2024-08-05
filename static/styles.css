@@ -17,7 +17,7 @@ body {
   background-color: #111;
   border: 2px solid #00f;
   border-radius: 15px;
-  box-shadow: 0 0 30px #00f, 0 0 50px #00f inset;
+  box-shadow: 0 0 30px #00f, 0 0 50px #ff00ff inset;
   text-align: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   animation: glow 2s infinite alternate;
@@ -25,26 +25,26 @@ body {
 
 .container:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px #00f, 0 0 60px #00f inset;
+  box-shadow: 0 0 40px #00f, 0 0 60px #ff00ff inset;
 }
 
 h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px #00f, 0 0 20px #00f;
+  text-shadow: 0 0 10px #00f, 0 0 20px #ff00ff;
   animation: pulse 3s infinite;
 }
 
 .highlight-xss {
   color: #ff0;
   font-weight: bold;
-  text-shadow: 0 0 10px #ff0, 0 0 20px #ff0;
+  text-shadow: 0 0 10px #0000ff, 0 0 20px #ff00ff;
 }
 
 .highlight-trhacknon {
   color: #0ff;
   font-weight: bold;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  text-shadow: 0 0 10px #0000ff, 0 0 15px #ff00ff, 0 0 20px #000000;
 }
 
 label {
@@ -63,17 +63,17 @@ input, select {
   font-size: 1em;
   background-color: #222;
   color: #0ff;
-  box-shadow: 0 0 10px #00f;
+  box-shadow: 0 0 10px #ff00ff;
 }
 
 input:focus, select:focus {
   outline: none;
-  box-shadow: 0 0 20px #00f;
+  box-shadow: 0 0 20px #ffff00;
 }
 
 button {
-  background-color: #00f;
-  color: #000;
+  background-color: #000000;
+  color: #ff0000;
   border: none;
   padding: 15px 30px;
   cursor: pointer;
@@ -81,14 +81,14 @@ button {
   margin-top: 20px;
   font-size: 1.2em;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px #00f;
+  box-shadow: 0 0 10px #ff00ff;
   animation: pulse 2s infinite alternate;
 }
 
 button:hover {
-  color: #00f;
-  background-color: #000;
-  box-shadow: 0 0 20px #00f;
+  color: #000000;
+  background-color: #ff0000;
+  box-shadow: 0 0 20px #ffff00;
 }
 
 select {
@@ -110,7 +110,7 @@ select:focus, input:focus {
     box-shadow: 0 0 5px #00f;
   }
   50% {
-    box-shadow: 0 0 20px #00f;
+    box-shadow: 0 0 20px #ff00ff;
   }
   100% {
     box-shadow: 0 0 5px #00f;
@@ -136,7 +136,7 @@ select:focus, input:focus {
   }
   50% {
     transform: scale(1.1);
-    box-shadow: 0 0 20px #00f;
+    box-shadow: 0 0 20px #ff00ff;
   }
   100% {
     transform: scale(1);
