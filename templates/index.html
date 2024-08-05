@@ -41,83 +41,9 @@
     <link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg') }}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
     <title>XSS Payload Customizer</title>
-    <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
-            color: #fff;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
-            margin-bottom: 20px;
-        }
-        .container {
-            margin-top: 12px; /* Add this line */
-            max-width: 600px;
-            margin-bottom: 15px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            text-align: center;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .highlight-xss {
-            color: #ffcc00;
-            font-weight: bold;
-        }
-        .highlight-trhacknon {
-            color: #00ffcc;
-            font-weight: bold;
-        }
-        label {
-            display: block;
-            margin-top: 20px;
-            font-size: 1.2em;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 1em;
-        }
-        button {
-            background-color: #ff6f61;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #ff4b3e;
-        }
-        select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-color: #fff;
-            color: #333;
-            padding: 10px;
-        }
-        select:focus, input:focus {
-            outline: none;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-    </style>
 </head>
 <body>
     <div class="container">
