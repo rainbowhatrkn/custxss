@@ -1,14 +1,13 @@
 body {
   font-family: 'Courier New', Courier, monospace;
-  background: #000;
+  background: radial-gradient(circle, #000 0%, #111 100%);
   color: #0ff;
   margin: 0;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 100vh;
-  margin-bottom: 20px; /* Marge en bas */
+  min-height: 100vh;
 }
 
 .container {
@@ -17,24 +16,35 @@ body {
   padding: 20px;
   background-color: #111;
   border: 2px solid #00f;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #00f;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #00f, 0 0 50px #00f inset;
   text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: glow 2s infinite alternate;
+}
+
+.container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00f, 0 0 60px #00f inset;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin-bottom: 20px;
+  text-shadow: 0 0 10px #00f, 0 0 20px #00f;
+  animation: pulse 3s infinite;
 }
 
 .highlight-xss {
   color: #ff0;
   font-weight: bold;
+  text-shadow: 0 0 10px #ff0, 0 0 20px #ff0;
 }
 
 .highlight-trhacknon {
   color: #0ff;
   font-weight: bold;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
 }
 
 label {
@@ -53,6 +63,12 @@ input, select {
   font-size: 1em;
   background-color: #222;
   color: #0ff;
+  box-shadow: 0 0 10px #00f;
+}
+
+input:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 20px #00f;
 }
 
 button {
@@ -64,12 +80,15 @@ button {
   border-radius: 5px;
   margin-top: 20px;
   font-size: 1.2em;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px #00f;
+  animation: pulse 2s infinite alternate;
 }
 
 button:hover {
   color: #00f;
   background-color: #000;
+  box-shadow: 0 0 20px #00f;
 }
 
 select {
@@ -83,5 +102,44 @@ select {
 
 select:focus, input:focus {
   outline: none;
-  box-shadow: 0 0 10px #0ff;
+  box-shadow: 0 0 20px #0ff;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #00f;
+  }
+  50% {
+    box-shadow: 0 0 20px #00f;
+  }
+  100% {
+    box-shadow: 0 0 5px #00f;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #00f;
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00f;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #00f;
+  }
 }
